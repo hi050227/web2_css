@@ -8,7 +8,24 @@
     /* 모든 a태그에 대해 검은색으로 설정 */
       a {
         color:black;
+
         text-decoration: none;
+      }
+      /* class html 태그를 사용하여 그룹핑을 하고 .###을
+      사용하여 해당  class의 ###을 찾아 적용 시킨다
+      우선순위가 존재함 active와 saw의
+      자리를 바꾸면 현재 페이지에 머물고 있으면 red로 바뀌어야 하지만
+      gray로 바뀜. 해결 하기 위해 id 사용, id의 active태그를
+      선택하기 위해 #active 사용하여 선택한다 우선순위가 id > class > tag
+      id의 선택자 값은 중북으로 사용 불가 우선순위가 높은 이유는 다른 선택자에 비해
+      구체적이기 때문이다 tag선택자는 다른 선택자에 비해 포괄적이기 때문에 우선순위가
+      가장 낮다
+      */
+      #active {
+        color: red;
+      }
+      .saw {
+        color: gray;
       }
       h1 {
         font-size: 45px;
@@ -32,11 +49,8 @@
     <!-- <h1><a href="index.html"><font color='red'>WEB</font></a></h1> -->
     <h1><a href="index.html">WEB</a></h1>
     <ol>
-      <!-- <li><a href="1.html"><font color='red'>HTML</font></a></li>
-      <li><a href="2.html"><font color='red'>CSS</font></a></li>
-      <li><a href="3.html"><font color='red'>JavaScript</font></a></li> -->
-      <li><a href="1.html">HTML</a></li>
-      <li><a href="2.html" style="color:red;text-decoration:underline">CSS</a></li>
+      <li><a href="1.html" class="saw">HTML</a></li>
+      <li><a href="2.html" class="saw" id="active">CSS</a></li>
       <li><a href="3.html">JavaScript</a>
     </ol>
     <h2>CSS</h2>
